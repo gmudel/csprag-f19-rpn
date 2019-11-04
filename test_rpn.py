@@ -17,6 +17,9 @@ class TestBasics(unittest.TestCase):
     def test_div2(self):
         result = rpn.calculate('24 8 /')
         self.assertEqual(3, result)
+    def test_exp(self):
+        result = rpn.calculate('2, 4, ^')
+        self.assertEqual(16, result)
     def test_badinput(self):
         with self.assertRaises(TypeError):
             rpn.calculate('1 2 3 +')

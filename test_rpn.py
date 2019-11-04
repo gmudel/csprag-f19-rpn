@@ -20,4 +20,4 @@ class TestBasics(unittest.TestCase):
     def test_badinput(self):
         with self.assertRaises(TypeError):
             rpn.calculate('1 2 3 +')
-        
+

@@ -1,13 +1,15 @@
 #!/usr/bin/env python3
 
 import operator
+from termcolor import colored
 
 operators = {
         '+': operator.add,
         '-': operator.sub,
         '*': operator.mul,
         '/': operator.floordiv,
-        '^': operator.pow
+        '^': operator.pow,
+        '%': operator.mod,
         }
 
 def calculate(arg):
@@ -25,7 +27,7 @@ def calculate(arg):
 
     if len(stack) != 1:
         raise TypeError("malformed input")
-    return stack.pop()
+    return colored(arg1, "red"), colored(token, "red"), colored(arg2, "red"), colored("=", "green"), colored(stack.pop(), "green")
 
 def main():
     while True:
